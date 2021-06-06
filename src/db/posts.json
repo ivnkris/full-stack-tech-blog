@@ -1,0 +1,12 @@
+[
+  {
+    "title": "Test Blog Post",
+    "body": "This is just a test blog post",
+    "user_id": 1
+  },
+  {
+    "title": "Another Test Blog Post",
+    "body": "This is just another test blog post",
+    "user_id": 2
+  }
+]

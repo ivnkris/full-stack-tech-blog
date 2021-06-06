@@ -1,0 +1,12 @@
+[
+  {
+    "message": "This is just a test comment",
+    "user_id": 2,
+    "post_id": 1
+  },
+  {
+    "message": "This is just another test comment",
+    "user_id": 1,
+    "post_id": 2
+  }
+]
