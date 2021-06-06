@@ -1,5 +1,6 @@
 const { Model, DataTypes } = require("sequelize");
 
+const hooks = require("../hooks");
 const sequelize = require("../config/connection");
 
 const options = {
