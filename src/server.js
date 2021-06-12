@@ -1,6 +1,7 @@
 require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
+const handlebars = require("express-handlebars");
 
 const sequelize = require("./config/connection");
 const routes = require("./routes");
@@ -8,6 +9,11 @@ const routes = require("./routes");
 const PORT = process.env.PORT || 3000;
 
 const app = express();
+
+const hbs = handlebars.create({});
+
+app.engine("handlebars", hbs.engine);
+app.set("view engine", "handlebars");
 
 app.use(cors());
 app.use(express.json({ extended: true }));
