@@ -5,7 +5,7 @@ const handleCreatePost = (req, res) => {
     const newPost = Post.create({
       title: req.body.title,
       content: req.body.content,
-      // TODO: user_id needed from session
+      user_id: req.session.userId,
     });
     res.json(newPost);
   } catch (error) {
