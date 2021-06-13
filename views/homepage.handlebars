@@ -1,1 +1,7 @@
-<h1>Hello Handlebars</h1>
+<article>
+
+    {{#each posts as |post| }}
+        {{> post-info post}}
+    {{/each}}
+
+</article>
