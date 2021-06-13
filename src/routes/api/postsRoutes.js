@@ -6,8 +6,9 @@ const handlePostComment = require("../../controllers/api/handlePostComment");
 
 const router = Router();
 
-router.post("/", handleCreatePost);
 router.delete("/:id", handleDeletePost);
 router.post("/:id/comments", handlePostComment);
+
+router.post("/", handleCreatePost);
 
 module.exports = router;
