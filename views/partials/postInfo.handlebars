@@ -9,5 +9,11 @@
   <div class="card-body">
     <p class="card-text">{{body}}</p>
   </div>
-  {{#if isSinglePost}}{{/if}}
+  {{#if isSinglePost}}
+    <div>
+      {{#each comments}}
+        {{this}}
+      {{/each}}
+    </div>
+  {{/if}}
 </div>

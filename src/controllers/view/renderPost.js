@@ -23,6 +23,7 @@ const renderPost = async (req, res) => {
     formattedPost.isSinglePost = true;
     console.log(formattedPost);
     res.render("singlePost", { post: formattedPost });
+    // res.send(formattedPost);
   } catch (error) {
     console.log(`[ERROR] - ${error.message}`);
     res.status(500).json({ error: "Failed to render homepage" });
