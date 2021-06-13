@@ -1,17 +1,9 @@
-const { Post, Comment, User } = require("../../models");
+const { Post, User } = require("../../models");
 
 const renderHomePage = async (req, res) => {
   try {
     const posts = await Post.findAll({
       include: [
-        {
-          model: Comment,
-          include: [
-            {
-              model: User,
-            },
-          ],
-        },
         {
           model: User,
         },
