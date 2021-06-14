@@ -21,12 +21,10 @@ const renderPost = async (req, res) => {
 
     const formattedPost = post.get({ plain: true });
     formattedPost.isSinglePost = true;
-    console.log(formattedPost);
     res.render("singlePost", { post: formattedPost });
-    // res.send(formattedPost);
   } catch (error) {
     console.log(`[ERROR] - ${error.message}`);
-    res.status(500).json({ error: "Failed to render homepage" });
+    res.status(500).json({ error: "Failed to render blog post" });
   }
 };
 

@@ -12,7 +12,9 @@
   {{#if isSinglePost}}
     <div>
       {{#each comments}}
-        {{this}}
+        {{message}}
+        by
+        {{user.username}}
       {{/each}}
     </div>
   {{/if}}
