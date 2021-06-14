@@ -1,8 +1,8 @@
 const Post = require("../../models/Post");
 
-const handleCreatePost = (req, res) => {
+const handleCreatePost = async (req, res) => {
   try {
-    const newPost = Post.create({
+    const newPost = await Post.create({
       title: req.body.title,
       content: req.body.content,
       user_id: req.session.userId,
