@@ -10,11 +10,11 @@
     <p class="card-text">{{body}}</p>
   </div>
   {{#if isSinglePost}}
-    <div>
+    <hr />
+    <div class="card-body">
       {{#each comments}}
         {{message}}
-        by
-        {{user.username}}
+        <div>~ {{user.username}} on {{createdAt}}</div>
       {{/each}}
     </div>
   {{/if}}
