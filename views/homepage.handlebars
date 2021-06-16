@@ -1,3 +1,8 @@
+{{#if posts.isLoggedIn}}
+{{> privateNavbar }}
+{{else}}
+{{> publicNavbar }}
+{{/if}}
 <article>
     {{#each posts as |post| }}
         {{> postInfo post}}
