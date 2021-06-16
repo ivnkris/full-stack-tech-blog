@@ -20,7 +20,6 @@ const renderPost = async (req, res) => {
     });
 
     const formattedPost = post.get({ plain: true });
-    console.log(req.session);
     if (req.session.isLoggedIn) {
       formattedPost.isLoggedIn = true;
     } else {
