@@ -33,4 +33,34 @@ const login = async (req, res) => {
   }
 };
 
-module.exports = { login };
+const signup = async (req, res) => {
+  try {
+    console.log(req.body);
+    const username = req.body.username;
+    const email = req.body.email;
+    const password = req.body.password;
+    const firstName = req.body.first_name;
+    const lastName = req.body.last_name;
+
+    const user = await User.create({
+      username: username,
+      email: email,
+      password: password,
+      first_name: firstName,
+      last_name: lastName,
+    });
+    console.log(user);
+
+    if (!user) {
+      console.log("Failed to create user");
+      return res.status(500).json({ error: "Failed to signup" });
+    }
+
+    return res.status(200).json({ message: "success" });
+  } catch (error) {
+    console.log(error.message);
+    return res.status(500).json({ error: "Failed to signup" });
+  }
+};
+
+module.exports = { login, signup };
