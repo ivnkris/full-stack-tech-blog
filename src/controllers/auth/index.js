@@ -35,7 +35,6 @@ const login = async (req, res) => {
 
 const signup = async (req, res) => {
   try {
-    console.log(req.body);
     const username = req.body.username;
     const email = req.body.email;
     const password = req.body.password;
@@ -49,7 +48,6 @@ const signup = async (req, res) => {
       first_name: firstName,
       last_name: lastName,
     });
-    console.log(user.toJSON);
 
     if (!user) {
       console.log("Failed to create user");
