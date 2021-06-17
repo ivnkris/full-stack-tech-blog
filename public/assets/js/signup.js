@@ -26,7 +26,7 @@ const handleSignupSubmit = async (event) => {
       body: JSON.stringify(requestBody),
     };
 
-    const response = await fetch("/auth/sign-up", options);
+    const response = await fetch("/auth/signup", options);
 
     if (response.status === 200) {
       window.location.replace("/login");

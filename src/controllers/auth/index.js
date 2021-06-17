@@ -49,7 +49,7 @@ const signup = async (req, res) => {
       first_name: firstName,
       last_name: lastName,
     });
-    console.log(user);
+    console.log(user.toJSON);
 
     if (!user) {
       console.log("Failed to create user");
