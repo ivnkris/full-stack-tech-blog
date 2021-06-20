@@ -9,11 +9,13 @@ const renderPost = async (req, res) => {
       include: [
         {
           model: User,
+          exclude: ["email", "password", "first_name", "last_name"],
         },
         {
           model: Comment,
           include: {
             model: User,
+            exclude: ["email", "password", "first_name", "last_name"],
           },
         },
       ],

@@ -9,6 +9,7 @@ const renderDashboard = async (req, res) => {
       include: [
         {
           model: User,
+          exclude: ["email", "password", "first_name", "last_name"],
         },
         {
           model: Comment,
@@ -23,6 +24,7 @@ const renderDashboard = async (req, res) => {
       include: [
         {
           model: User,
+          exclude: ["email", "password", "first_name", "last_name"],
         },
         {
           model: Post,

@@ -7,6 +7,7 @@ const renderHomePage = async (req, res) => {
       include: [
         {
           model: User,
+          exclude: ["email", "password", "first_name", "last_name"],
         },
       ],
     });
