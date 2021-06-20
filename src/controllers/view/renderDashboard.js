@@ -41,7 +41,6 @@ const renderDashboard = async (req, res) => {
       comments: formattedComments,
       user_id: req.session.userId,
     };
-    console.log(formattedPosts);
     res.render("dashboard", { payload });
   } catch (error) {
     console.log(`[ERROR] - ${error.message}`);
