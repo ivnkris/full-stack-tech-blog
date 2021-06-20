@@ -1,5 +1,5 @@
 {{> privateNavbar}}
-  <form name="new-post-form">
+  <form name="new-post-form" id="{{payload.user_id}}">
     <h2>Add new blog post</h2>
     <div class="mb-3">
       <input
@@ -13,7 +13,7 @@
       <textarea
         type="text"
         class="form-control"
-        id="body"
+        id="post-body"
         placeholder="Blog post content"
       ></textarea>
     </div>

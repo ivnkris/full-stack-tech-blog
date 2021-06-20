@@ -4,7 +4,7 @@ const handleCreatePost = async (req, res) => {
   try {
     const newPost = await Post.create({
       title: req.body.title,
-      content: req.body.content,
+      body: req.body.body,
       user_id: req.session.userId,
     });
     res.json(newPost);
