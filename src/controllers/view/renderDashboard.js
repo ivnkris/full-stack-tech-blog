@@ -36,9 +36,13 @@ const renderDashboard = async (req, res) => {
     const formattedComments = comments.map((comment) =>
       comment.get({ plain: true })
     );
+
+    const reversedPosts = formattedPosts.reverse();
+    const reversedComments = formattedComments.reverse();
+
     const payload = {
-      posts: formattedPosts,
-      comments: formattedComments,
+      posts: reversedPosts,
+      comments: reversedComments,
       user_id: req.session.userId,
     };
     res.render("dashboard", { payload });

@@ -18,7 +18,8 @@ const renderHomePage = async (req, res) => {
     } else {
       formattedPosts.isLoggedIn = false;
     }
-    res.render("homepage", { posts: formattedPosts });
+    const reversedPosts = formattedPosts.reverse();
+    res.render("homepage", { posts: reversedPosts });
   } catch (error) {
     console.log(`[ERROR] - ${error.message}`);
     res.status(500).json({ error: "Failed to render homepage" });
