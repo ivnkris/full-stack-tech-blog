@@ -13,3 +13,14 @@
    {{message}}
    <div>~ {{user.username}} on {{createdAt}}</div>
   </div>
+  <div class="text-center">
+    <a
+      href="/dashboard/edit-comment/{{id}}"
+      class="btn btn-success card-link mb-3 w-100"
+    >Edit Comment</a>
+    <button
+      data-id="{{id}}"
+      name="delete-comment-btn"
+      class="btn btn-danger card-link mb-3 mx-0 w-100"
+    >Delete Comment</button>
+  </div>
