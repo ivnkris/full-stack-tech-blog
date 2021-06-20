@@ -1,10 +1,8 @@
 const { Router } = require("express");
-const {
-  getUserById,
-  addUser,
-  updateUser,
-  deleteUser,
-} = require("../../controllers/api/users");
+const getUserById = require("../../controllers/api/users/getUserById");
+const addUser = require("../../controllers/api/users/addUser");
+const updateUser = require("../../controllers/api/users/updateUser");
+const deleteUser = require("../../controllers/api/users/deleteUser");
 
 const router = Router();
 
