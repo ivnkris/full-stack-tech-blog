@@ -1,0 +1,15 @@
+<div class="card mb-5">
+  <div class="card-header">
+    <h4 class="card-title"><a
+        href="/posts/{{post.id}}"
+        class="link-dark"
+      >{{post.title}}</a></h4>
+    <h6 class="card-subtitle mb-2">Posted by
+      {{user.username}}
+      on
+      {{createdAt}}</h6>
+  </div>
+  <div class="card-body">
+   {{message}}
+   <div>~ {{user.username}} on {{createdAt}}</div>
+  </div>

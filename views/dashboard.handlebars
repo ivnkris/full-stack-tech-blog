@@ -1,2 +1,13 @@
 {{> privateNavbar}}
-<h1>Dashboard</h1>
+<article>
+  <h2>Your blog posts</h2>
+    {{#each payload.posts as |post| }}
+        {{> dashboardPost post}}
+    {{/each}}
+</article>
+<article>
+   <h2>Your comments</h2>
+ {{#each payload.comments as |comment| }}
+        {{> dashboardComment comment}}
+    {{/each}}
+</article>
