@@ -12,3 +12,15 @@
   <div class="card-body">
     <p class="card-text">{{body}}</p>
   </div>
+  <div class="text-center">
+    <a
+      href="/dashboard/edit/{{id}}"
+      class="btn btn-success card-link mb-3 w-100"
+    >Edit Blog Post</a>
+    <button
+      data-id="{{id}}"
+      name="delete-btn"
+      class="btn btn-danger card-link mb-3 mx-0 w-100"
+    >Delete Blog Post</button>
+  </div>
+</div>
