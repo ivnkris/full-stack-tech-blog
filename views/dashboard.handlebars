@@ -1,4 +1,26 @@
 {{> privateNavbar}}
+  <form name="new-post-form">
+    <h2>Add new blog post</h2>
+    <div class="mb-3">
+      <input
+        type="text"
+        class="form-control"
+        id="title"
+        placeholder="Blog post title"
+      />
+    </div>
+    <div class="mb-3">
+      <textarea
+        type="text"
+        class="form-control"
+        id="body"
+        placeholder="Blog post content"
+      ></textarea>
+    </div>
+    <div class="mb-3 d-grid gap-2">
+      <button type="submit" class="btn btn-primary mb-3">Post Article</button>
+    </div>
+  </form>
 <article>
   <h2>Your blog posts</h2>
     {{#each payload.posts as |post| }}
