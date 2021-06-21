@@ -15,6 +15,7 @@ const renderHomePage = async (req, res) => {
     const formattedPosts = posts.map((post) => post.get({ plain: true }));
     if (req.session.isLoggedIn) {
       formattedPosts.isLoggedIn = true;
+      formattedPosts.user_id = req.session.userId;
     } else {
       formattedPosts.isLoggedIn = false;
     }

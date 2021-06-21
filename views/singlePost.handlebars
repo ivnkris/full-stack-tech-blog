@@ -6,3 +6,8 @@
 <article>
   {{> postInfo post}}
 </article>
+<div>
+  {{#if post.isLoggedIn}}
+  {{> newComment}}
+  {{/if}}
+</div>
