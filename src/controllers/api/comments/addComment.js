@@ -2,7 +2,12 @@ const { Comment } = require("../../../models");
 
 const addComment = async (req, res) => {
   try {
-    const newComment = await Comment.create(req.body);
+    const parameters = {
+      message: req.body.message,
+      post_id: req.body.post_id,
+      user_id: req.session.userId,
+    };
+    const newComment = await Comment.create(parameters);
 
     return res.status(200).json(newComment);
   } catch (error) {

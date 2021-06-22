@@ -1,14 +1,14 @@
 const handleNewComment = async (event) => {
   event.preventDefault();
 
-  console.log(event);
+  const pathName = window.location.pathname;
+
   const message = $("#message").val();
-  const user_id = event.currentTarget.id;
-  // const post_id =
+  const post_id = pathName.slice(7);
 
   const requestBody = {
     message,
-    user_id,
+    post_id,
   };
 
   const options = {
