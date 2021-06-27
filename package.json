@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node src/server.js",
     "dev": "nodemon src/server.js",
-    "seed": "node src/db/seed.js",
-    "start": "node src/server.js"
+    "seed": "node src/db/seed.js"
   },
   "repository": {
     "type": "git",
