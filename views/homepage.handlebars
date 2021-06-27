@@ -4,7 +4,11 @@
 {{> publicNavbar }}
 {{/if}}
 <article>
+    {{#if posts.isEmpty}}
+        {{> emptyHomepage}}
+    {{else}}
     {{#each posts as |post| }}
         {{> postInfo post}}
     {{/each}}
+    {{/if}}
 </article>
