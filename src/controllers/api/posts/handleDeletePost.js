@@ -2,6 +2,7 @@ const { Post } = require("../../../models");
 
 const handleDeletePost = async (req, res) => {
   try {
+    // submit a sequelize destroy request on the Post table
     const postToBeDeleted = await Post.destroy({
       where: {
         id: +req.params.id,

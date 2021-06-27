@@ -2,6 +2,7 @@ const { Comment } = require("../../../models");
 
 const updateComment = async (req, res) => {
   try {
+    // submit an update request to the Comment table using the values from the request body
     const commentToBeUpdated = await Comment.update(req.body, {
       where: {
         id: +req.params.id,

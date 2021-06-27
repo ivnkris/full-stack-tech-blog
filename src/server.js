@@ -22,11 +22,13 @@ const sessionOptions = {
   }),
 };
 
+// view engine
 const hbs = handlebars.create({});
 
 app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
 
+// middlewares
 app.use(cors());
 app.use(session(sessionOptions));
 app.use(express.json({ extended: true }));
@@ -34,6 +36,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "../", "public")));
 app.use(routes);
 
+// init function to start server
 const init = async () => {
   try {
     await sequelize.sync();

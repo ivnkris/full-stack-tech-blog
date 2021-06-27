@@ -2,6 +2,7 @@ const { Comment } = require("../../../models");
 
 const deleteComment = async (req, res) => {
   try {
+    // submit a sequelize destroy request to the Comment table
     const commentToBeDeleted = await Comment.destroy({
       where: {
         id: +req.params.id,
