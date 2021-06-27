@@ -11,27 +11,19 @@ const renderHomePage = async (req, res) => {
         },
       ],
     });
-    if (posts) {
-      const formattedPosts = posts.map((post) => post.get({ plain: true }));
-      if (req.session.isLoggedIn) {
-        formattedPosts.isLoggedIn = true;
-        formattedPosts.user_id = req.session.userId;
-      } else {
-        formattedPosts.isLoggedIn = false;
-      }
-      const reversedPosts = formattedPosts.reverse();
-      reversedPosts.isEmpty = false;
+    const formattedPosts = posts.map((post) => post.get({ plain: true }));
+    if (formattedPosts.length > 0) {
+      formattedPosts.isEmpty = false;
     } else {
-      const formattedPosts = {};
-      if (req.session.isLoggedIn) {
-        formattedPosts.isLoggedIn = true;
-        formattedPosts.user_id = req.session.userId;
-      } else {
-        formattedPosts.isLoggedIn = false;
-      }
-      const reversedPosts = formattedPosts;
-      reversedPosts.isEmpty = true;
+      formattedPosts.isEmpty = true;
     }
+    if (req.session.isLoggedIn) {
+      formattedPosts.isLoggedIn = true;
+      formattedPosts.user_id = req.session.userId;
+    } else {
+      formattedPosts.isLoggedIn = false;
+    }
+    const reversedPosts = formattedPosts.reverse();
     res.render("homepage", { posts: reversedPosts });
   } catch (error) {
     console.log(`[ERROR] - ${error.message}`);
